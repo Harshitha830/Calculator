@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <h2>Scientific Calculator</h2>
+        <input type="text" id="display" readonly placeholder="0" />
+
+        <table>
+          <tr>
+            <td><button class="clear" onclick="clearDisplay()">C</button></td>
+            <td><button class="clear" onclick="backspace()">⌫</button></td>
+            <td><button onclick="append('(')">(</button></td>
+            <td><button onclick="append(')')">)</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('7')">7</button></td>
+            <td><button onclick="append('8')">8</button></td>
+            <td><button onclick="append('9')">9</button></td>
+            <td><button class="operator" onclick="append('/')">÷</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('4')">4</button></td>
+            <td><button onclick="append('5')">5</button></td>
+            <td><button onclick="append('6')">6</button></td>
+            <td><button class="operator" onclick="append('*')">×</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('1')">1</button></td>
+            <td><button onclick="append('2')">2</button></td>
+            <td><button onclick="append('3')">3</button></td>
+            <td><button class="operator" onclick="append('-')">−</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('0')">0</button></td>
+            <td><button onclick="append('.')">.</button></td>
+            <td><button onclick="append('**')">xʸ</button></td>
+            <td><button class="operator" onclick="append('+')">+</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('Math.sin(')">sin</button></td>
+            <td><button onclick="append('Math.cos(')">cos</button></td>
+            <td><button onclick="append('Math.tan(')">tan</button></td>
+            <td><button onclick="append('Math.sqrt(')">√</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append('Math.log(')">ln</button></td>
+            <td><button onclick="append('Math.PI')">π</button></td>
+            <td><button onclick="append('Math.E')">e</button></td>
+            <td><button onclick="factorial()">x!</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="toggleHistory()">History</button></td>
+            <td colspan="2">
+              <button class="equal" onclick="calculate()">=</button>
+            </td>
+            <td><button onclick="append('%')">%</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="history" id="history">
+        <h3>History</h3>
+        <div id="historyList"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
